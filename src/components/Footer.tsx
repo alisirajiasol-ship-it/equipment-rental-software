@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/data/siteData";
-import { ToolsLogoIcon } from "@/components/ToolsIcon";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
@@ -13,20 +13,16 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-4">
             <Link
               href="/"
-              className="flex items-center gap-3 font-semibold text-slate-900"
+              className="inline-block transition-opacity hover:opacity-95"
               aria-label="Equipment Rental Software Home"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white shadow-xs shrink-0">
-                <ToolsLogoIcon className="h-5 w-5 text-white" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-base font-bold tracking-tight text-slate-900 leading-snug">
-                  {siteConfig.name}
-                </span>
-                <span className="text-xs text-slate-500 font-medium">
-                  {siteConfig.domain}
-                </span>
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="EquipmentRentalSoftware.io"
+                width={200}
+                height={54}
+                className="h-10 md:h-11 w-auto object-contain"
+              />
             </Link>
 
             <p className="text-sm leading-relaxed text-slate-600 max-w-sm">

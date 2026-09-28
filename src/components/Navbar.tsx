@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { siteConfig } from "@/data/siteData";
-import { ToolsLogoIcon } from "@/components/ToolsIcon";
 import { Menu, X, ArrowRight, Mail, Phone } from "lucide-react";
 
 export default function Navbar() {
@@ -50,23 +50,20 @@ export default function Navbar() {
       </div>
 
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Brand Logo with Tools / Equipment Icon */}
+        {/* Brand Logo */}
         <Link
           href="/"
-          className="group flex items-center gap-3 font-semibold text-slate-900 transition-colors"
+          className="group flex items-center transition-opacity hover:opacity-95"
           aria-label="Equipment Rental Software Home"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white shadow-xs transition-transform duration-200 group-hover:scale-105">
-            <ToolsLogoIcon className="h-5 w-5 text-white" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-lg font-bold tracking-tight text-slate-900 leading-tight">
-              EquipmentRentalSoftware<span className="text-blue-600">.io</span>
-            </span>
-            <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest">
-              Fleet &amp; Tool Management
-            </span>
-          </div>
+          <Image
+            src="/images/logo.png"
+            alt="EquipmentRentalSoftware.io"
+            width={215}
+            height={58}
+            priority
+            className="h-11 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+          />
         </Link>
 
         {/* Desktop Navigation Links */}
