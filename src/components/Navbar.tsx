@@ -59,10 +59,10 @@ export default function Navbar() {
           <Image
             src="/images/logo.png"
             alt="EquipmentRentalSoftware.io"
-            width={215}
-            height={58}
+            width={250}
+            height={67}
             priority
-            className="h-11 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+            className="h-13 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
           />
         </Link>
 

@@ -19,9 +19,9 @@ export default function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="EquipmentRentalSoftware.io"
-                width={200}
-                height={54}
-                className="h-10 md:h-11 w-auto object-contain"
+                width={240}
+                height={64}
+                className="h-12 md:h-14 w-auto object-contain"
               />
             </Link>
 
