@@ -92,7 +92,7 @@ export default function Navbar() {
         {/* Right CTA matching mockup */}
         <div className="hidden lg:flex items-center gap-5">
           <Link
-            href="/contact-us"
+            href="/login"
             className="text-sm font-semibold text-slate-700 hover:text-slate-900 transition-colors"
           >
             Login
@@ -147,7 +147,7 @@ export default function Navbar() {
             })}
             <div className="mt-4 pt-4 border-t border-slate-100 flex flex-col gap-3">
               <Link
-                href="/contact-us"
+                href="/login"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center rounded-xl border border-slate-200 px-4 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50"
               >
