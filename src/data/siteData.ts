@@ -68,7 +68,7 @@ export const pricingTiers: PricingTier[] = [
     yearlyPrice: 31,
     bestFor: "Small rental businesses",
     ctaText: "Start Free Trial",
-    ctaHref: "/contact-us?plan=starter",
+    ctaHref: "/signup?plan=starter",
     features: [
       "Equipment Inventory Tracking",
       "Real-Time Equipment Availability",
@@ -90,7 +90,7 @@ export const pricingTiers: PricingTier[] = [
     popular: true,
     bestFor: "Growing rental companies",
     ctaText: "Start Free Trial",
-    ctaHref: "/contact-us?plan=pro",
+    ctaHref: "/signup?plan=pro",
     features: [
       "All Starter Plan Capabilities",
       "Full Online Customer Booking Engine",
@@ -110,8 +110,8 @@ export const pricingTiers: PricingTier[] = [
     monthlyPrice: 149,
     yearlyPrice: 119,
     bestFor: "Established rental operations",
-    ctaText: "Book a Demo",
-    ctaHref: "/contact-us?plan=business",
+    ctaText: "Start Free Trial",
+    ctaHref: "/signup?plan=business",
     features: [
       "All Professional Plan Capabilities",
       "Multiple Depots & Fleet Locations",

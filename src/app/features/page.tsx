@@ -72,7 +72,7 @@ export default function FeaturesPage() {
         {/* Hero CTA Button Bar */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link
-            href="/pricing"
+            href="/signup"
             className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-8 py-3.5 text-sm font-bold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-200"
           >
             <span>Start 14-Day Free Trial</span>
@@ -147,7 +147,7 @@ export default function FeaturesPage() {
 
             <div className="pt-3">
               <Link
-                href="/pricing"
+                href="/signup"
                 className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-sm hover:bg-blue-700 transition-colors"
               >
                 <span>Start Tracking Fleet Assets</span>
@@ -225,7 +225,7 @@ export default function FeaturesPage() {
 
             <div className="pt-3">
               <Link
-                href="/pricing"
+                href="/signup"
                 className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-sm hover:bg-blue-700 transition-colors"
               >
                 <span>Launch Online Booking Engine</span>
@@ -293,7 +293,7 @@ export default function FeaturesPage() {
 
             <div className="pt-3">
               <Link
-                href="/pricing"
+                href="/signup"
                 className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-sm hover:bg-blue-700 transition-colors"
               >
                 <span>Automate Deposits &amp; Invoicing</span>
@@ -371,7 +371,7 @@ export default function FeaturesPage() {
 
             <div className="pt-3">
               <Link
-                href="/pricing"
+                href="/signup"
                 className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-sm hover:bg-blue-700 transition-colors"
               >
                 <span>Automate Fleet Maintenance</span>
@@ -398,7 +398,7 @@ export default function FeaturesPage() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/pricing"
+                href="/signup"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-8 py-4 text-sm font-bold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-200"
               >
                 <span>Start 14-Day Free Trial</span>

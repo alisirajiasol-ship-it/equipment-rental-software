@@ -98,7 +98,7 @@ export default function Navbar() {
             Login
           </Link>
           <Link
-            href="/pricing"
+            href="/signup"
             className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all duration-200 hover:bg-blue-700 hover:shadow-md focus-visible:ring-2 focus-visible:ring-blue-600"
           >
             <span>Start Free Trial</span>
@@ -154,7 +154,7 @@ export default function Navbar() {
                 Login
               </Link>
               <Link
-                href="/pricing"
+                href="/signup"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-700"
               >
