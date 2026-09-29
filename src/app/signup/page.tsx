@@ -17,11 +17,35 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Start 14-Day Free Trial | Full Platform Access",
+  title: "Start 14-Day Free Trial",
   description:
-    "Start your 14-day free trial of EquipmentRentalSoftware.io. Full access to inventory tracking, live calendar bookings, automated invoicing, and maintenance checklists. No credit card required.",
+    "Start your 14-day free trial of Equipment Rental Software. Full access to inventory tracking, online booking, and invoicing. No card needed.",
   alternates: {
     canonical: "/signup",
+  },
+  openGraph: {
+    title: "Start 14-Day Free Trial | Equipment Rental Software",
+    description:
+      "Start your 14-day free trial of Equipment Rental Software. Full access to inventory tracking, online booking, and invoicing. No card needed.",
+    url: `${siteConfig.baseUrl}/signup`,
+    siteName: siteConfig.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${siteConfig.baseUrl}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Start Free Trial - Equipment Rental Software",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Start 14-Day Free Trial | Equipment Rental Software",
+    description:
+      "Start your 14-day free trial of Equipment Rental Software. Full access to inventory tracking, online booking, and invoicing. No card needed.",
+    images: [`${siteConfig.baseUrl}/opengraph-image`],
   },
 };
 

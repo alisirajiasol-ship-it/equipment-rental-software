@@ -14,7 +14,7 @@ import {
 
 export default function DashboardMockup() {
   return (
-    <div className="relative mx-auto w-full rounded-3xl border border-slate-200/90 bg-white p-3 sm:p-5 shadow-2xl ring-1 ring-slate-900/5 text-left">
+    <div className="relative mx-auto w-full rounded-3xl border border-slate-200/90 bg-white p-3 sm:p-5 shadow-2xl ring-1 ring-slate-900/5 text-left" aria-hidden="true">
       {/* Browser Bar Header */}
       <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4 px-1">
         <div className="flex items-center gap-1.5">
@@ -81,9 +81,9 @@ export default function DashboardMockup() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
             <div className="flex items-center gap-2">
               <Layers className="h-4 w-4 text-slate-700" aria-hidden="true" />
-              <h4 className="text-xs sm:text-sm font-bold text-slate-900">
+              <p className="text-xs sm:text-sm font-bold text-slate-900">
                 Live Equipment Dispatch & Status
-              </h4>
+              </p>
             </div>
             <div className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 py-1 text-xs text-slate-400">
               <Search className="h-3 w-3" aria-hidden="true" />

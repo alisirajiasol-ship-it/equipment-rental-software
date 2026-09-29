@@ -58,7 +58,7 @@ export const metadata: Metadata = {
         url: `${siteConfig.baseUrl}/opengraph-image`,
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} - Fleet Management Platform`,
+        alt: `${siteConfig.name} - Equipment Rental Software Platform`,
       },
     ],
   },
@@ -67,13 +67,6 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} | ${siteConfig.slogan}`,
     description: siteConfig.description,
     images: [`${siteConfig.baseUrl}/opengraph-image`],
-  },
-  verification: {
-    google: "google-site-verification-ERS-2026",
-    yandex: "yandex-verification-ERS-2026",
-    other: {
-      "msvalidate.01": ["BING-VERIFICATION-ERS-2026"],
-    },
   },
   robots: {
     index: true,
@@ -99,7 +92,7 @@ export default function RootLayout({
     name: siteConfig.name,
     alternateName: siteConfig.shortName,
     url: siteConfig.baseUrl,
-    logo: `${siteConfig.baseUrl}/logo.png`,
+    logo: `${siteConfig.baseUrl}/images/logo.png`,
     description: siteConfig.description,
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
@@ -119,7 +112,6 @@ export default function RootLayout({
     sameAs: [
       siteConfig.social.twitter,
       siteConfig.social.linkedin,
-      siteConfig.social.facebook,
     ],
   };
 
@@ -128,11 +120,6 @@ export default function RootLayout({
     "@type": "WebSite",
     name: siteConfig.name,
     url: siteConfig.baseUrl,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${siteConfig.baseUrl}/features?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return (

@@ -23,9 +23,33 @@ import {
 export const metadata: Metadata = {
   title: "Features & Capabilities",
   description:
-    "Explore full features of EquipmentRentalSoftware.io: asset tracking, live availability, online reservations, automated invoicing, maintenance logs, and multi-depot fleet dispatch.",
+    "Explore full features: real-time asset tracking, live availability, online reservations, automated invoicing, and fleet maintenance workflows.",
   alternates: {
     canonical: "/features",
+  },
+  openGraph: {
+    title: "Features & Capabilities | Equipment Rental Software",
+    description:
+      "Explore full features: real-time asset tracking, live availability, online reservations, automated invoicing, and fleet maintenance workflows.",
+    url: `${siteConfig.baseUrl}/features`,
+    siteName: siteConfig.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${siteConfig.baseUrl}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Features & Capabilities - Equipment Rental Software",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Features & Capabilities | Equipment Rental Software",
+    description:
+      "Explore full features: real-time asset tracking, live availability, online reservations, automated invoicing, and fleet maintenance workflows.",
+    images: [`${siteConfig.baseUrl}/opengraph-image`],
   },
 };
 

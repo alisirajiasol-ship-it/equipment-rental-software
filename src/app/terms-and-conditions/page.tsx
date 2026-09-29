@@ -6,9 +6,33 @@ import { ShieldCheck, FileCheck, Scale, ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Terms and Conditions",
   description:
-    "Terms of Service and licensing agreement for EquipmentRentalSoftware.io platform, user obligations, subscription billing, and SLA commitments.",
+    "Terms of Service and licensing agreement for Equipment Rental Software platform, user obligations, subscription billing, and SLA policies.",
   alternates: {
     canonical: "/terms-and-conditions",
+  },
+  openGraph: {
+    title: "Terms and Conditions | Equipment Rental Software",
+    description:
+      "Terms of Service and licensing agreement for Equipment Rental Software platform, user obligations, subscription billing, and SLA policies.",
+    url: `${siteConfig.baseUrl}/terms-and-conditions`,
+    siteName: siteConfig.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${siteConfig.baseUrl}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Terms and Conditions - Equipment Rental Software",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms and Conditions | Equipment Rental Software",
+    description:
+      "Terms of Service and licensing agreement for Equipment Rental Software platform, user obligations, subscription billing, and SLA policies.",
+    images: [`${siteConfig.baseUrl}/opengraph-image`],
   },
 };
 

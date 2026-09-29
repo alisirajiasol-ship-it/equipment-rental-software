@@ -15,11 +15,35 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Account Login | Fleet Dispatch & Inventory Portal",
+  title: "Account Login",
   description:
-    "Sign in to your EquipmentRentalSoftware.io account. Access real-time machinery availability, contractor bookings, asset telematics, and automated invoicing.",
+    "Sign in to your Equipment Rental Software account to manage inventory availability, dispatch schedules, and customer invoices.",
   alternates: {
     canonical: "/login",
+  },
+  openGraph: {
+    title: "Account Login | Equipment Rental Software",
+    description:
+      "Sign in to your Equipment Rental Software account to manage inventory availability, dispatch schedules, and customer invoices.",
+    url: `${siteConfig.baseUrl}/login`,
+    siteName: siteConfig.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${siteConfig.baseUrl}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Account Login - Equipment Rental Software",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Account Login | Equipment Rental Software",
+    description:
+      "Sign in to your Equipment Rental Software account to manage inventory availability, dispatch schedules, and customer invoices.",
+    images: [`${siteConfig.baseUrl}/opengraph-image`],
   },
 };
 

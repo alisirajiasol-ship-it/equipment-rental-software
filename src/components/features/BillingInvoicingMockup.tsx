@@ -13,7 +13,7 @@ import {
 
 export default function BillingInvoicingMockup() {
   return (
-    <div className="w-full rounded-2xl border border-slate-200/90 bg-white shadow-xl shadow-slate-200/50 overflow-hidden text-slate-800">
+    <div className="w-full rounded-2xl border border-slate-200/90 bg-white shadow-xl shadow-slate-200/50 overflow-hidden text-slate-800" aria-hidden="true">
       {/* SaaS Window Chrome / Title Bar */}
       <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50/80 px-4 py-2.5">
         <div className="flex items-center gap-2">

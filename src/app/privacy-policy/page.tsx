@@ -6,9 +6,33 @@ import { Shield, Lock, FileText, CheckCircle2, ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Official Privacy Policy for EquipmentRentalSoftware.io. Details how we collect, store, and safeguard enterprise rental inventory, billing, and customer records.",
+    "Official Privacy Policy for Equipment Rental Software. Learn how we safeguard your rental fleet data, billing records, and customer information.",
   alternates: {
     canonical: "/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Equipment Rental Software",
+    description:
+      "Official Privacy Policy for Equipment Rental Software. Learn how we safeguard your rental fleet data, billing records, and customer information.",
+    url: `${siteConfig.baseUrl}/privacy-policy`,
+    siteName: siteConfig.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${siteConfig.baseUrl}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Privacy Policy - Equipment Rental Software",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Equipment Rental Software",
+    description:
+      "Official Privacy Policy for Equipment Rental Software. Learn how we safeguard your rental fleet data, billing records, and customer information.",
+    images: [`${siteConfig.baseUrl}/opengraph-image`],
   },
 };
 

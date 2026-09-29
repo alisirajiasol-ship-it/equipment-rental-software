@@ -6,9 +6,33 @@ import { MapPin, Phone, Mail, ShieldCheck } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Us & Support",
   description:
-    "Get in touch with EquipmentRentalSoftware.io headquarters in Northlake, IL. Call (708) 562-1403 or email hello@equipmentrentalsoftware.io for software support and live demos.",
+    "Contact Equipment Rental Software team in Northlake, IL. Call (708) 562-1403 or email hello@equipmentrentalsoftware.io for software support and live demos.",
   alternates: {
     canonical: "/contact-us",
+  },
+  openGraph: {
+    title: "Contact Us & Support | Equipment Rental Software",
+    description:
+      "Contact Equipment Rental Software team in Northlake, IL. Call (708) 562-1403 or email hello@equipmentrentalsoftware.io for software support and live demos.",
+    url: `${siteConfig.baseUrl}/contact-us`,
+    siteName: siteConfig.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${siteConfig.baseUrl}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Contact Us - Equipment Rental Software",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us & Support | Equipment Rental Software",
+    description:
+      "Contact Equipment Rental Software team in Northlake, IL. Call (708) 562-1403 or email hello@equipmentrentalsoftware.io for software support and live demos.",
+    images: [`${siteConfig.baseUrl}/opengraph-image`],
   },
 };
 

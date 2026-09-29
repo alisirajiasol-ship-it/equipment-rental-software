@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { siteConfig } from "@/data/siteData";
+import { siteConfig, faqs } from "@/data/siteData";
 import DashboardMockup from "@/components/DashboardMockup";
 import FaqAccordion from "@/components/FaqAccordion";
 import {
@@ -17,7 +18,6 @@ import {
   CheckCircle2,
   Clock,
   CreditCard,
-  ExternalLink,
   Globe,
   Layers,
   ShieldCheck,
@@ -30,9 +30,33 @@ import {
 export const metadata: Metadata = {
   title: "Equipment Rental Software | Rent Smarter. Manage Everything.",
   description:
-    "EquipmentRentalSoftware.io gives equipment rental businesses one powerful platform to manage inventory, availability, online bookings, payments, and fleet maintenance.",
+    "All-in-one equipment rental software to track inventory, automate online bookings, dispatch fleets, and manage maintenance. Start your free trial today.",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "Equipment Rental Software | Rent Smarter. Manage Everything.",
+    description:
+      "All-in-one equipment rental software to track inventory, automate online bookings, dispatch fleets, and manage maintenance. Start your free trial today.",
+    url: siteConfig.baseUrl,
+    siteName: siteConfig.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${siteConfig.baseUrl}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Equipment Rental Software Platform",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Equipment Rental Software | Rent Smarter. Manage Everything.",
+    description:
+      "All-in-one equipment rental software to track inventory, automate online bookings, dispatch fleets, and manage maintenance. Start your free trial today.",
+    images: [`${siteConfig.baseUrl}/opengraph-image`],
   },
 };
 
@@ -53,11 +77,6 @@ export default function HomePage() {
       highPrice: "149",
       offerCount: "3",
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "520",
-    },
     featureList: [
       "Real-time equipment inventory tracking",
       "Live equipment availability calendar",
@@ -69,11 +88,28 @@ export default function HomePage() {
     ],
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <div className="flex flex-col">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero Section matching mockup: 2-column layout */}
@@ -89,7 +125,7 @@ export default function HomePage() {
 
               {/* Subtitle */}
               <p className="text-base sm:text-lg leading-relaxed text-slate-600">
-                Manage inventory, bookings, contracts, payments, maintenance, and customers from one platform. Give your team real-time visibility while letting customers book equipment online 24/7.
+                All-in-one equipment rental management software to track fleet inventory, schedule bookings, manage contracts, automate payments, and streamline maintenance. Give your team real-time visibility while letting customers reserve equipment online 24/7.
               </p>
 
               {/* CTA Buttons */}
@@ -377,10 +413,10 @@ export default function HomePage() {
             {/* Left copy */}
             <div className="lg:col-span-5 text-left space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                Never lose track of a single asset, serial number, or jobsite return
+                Equipment Rental Inventory Tracking &amp; Real-Time Fleet Visibility
               </h2>
               <p className="text-base leading-relaxed text-slate-600">
-                Give every piece of equipment a complete digital record with serial numbers, location, usage hours, rental history, maintenance records, and revenue data.
+                Give every machine in your equipment rental software a complete digital profile with serial numbers, GPS yard location, engine hours, rental history, and revenue records.
               </p>
 
               <div className="space-y-3 pt-2 text-sm text-slate-700">
@@ -410,66 +446,60 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: Unified Showcase Image (Realistic Photo & Dashboard in one place) */}
+            {/* Right: Unified Showcase Image */}
             <div className="lg:col-span-7">
-              <a
-                href="/images/showcase-asset-tracking.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block relative overflow-hidden rounded-3xl border border-slate-200/90 shadow-xl group hover:shadow-2xl transition-all duration-300 bg-slate-100"
-                title="Click to view full image in new tab"
-              >
-                <img
+              <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 shadow-xl bg-slate-100">
+                <Image
                   src="/images/showcase-asset-tracking.jpg"
-                  alt="Asset tracking software dashboard with real CAT excavator on active jobsite"
-                  className="w-full h-auto object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
-                  width={1024}
-                  height={768}
+                  alt="Equipment rental software asset tracking dashboard with excavator on active jobsite"
+                  width={1000}
+                  height={750}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  quality={80}
+                  className="w-full h-auto object-cover object-center"
                 />
-                <div className="absolute top-4 right-4 bg-slate-900/80 hover:bg-slate-900 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-lg">
-                  <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                  <span>Open Image</span>
+                <div className="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                  <ShieldCheck className="h-3.5 w-3.5 text-blue-400" aria-hidden="true" />
+                  <span>Real-Time Fleet Telematics</span>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Alternating Showcase 2: Automated Customer Experience (No eyebrow, Box-type button, Real Image) */}
+      {/* Alternating Showcase 2: Automated Customer Experience */}
       <section className="py-20 sm:py-24 bg-slate-50/60 border-t border-slate-200/80">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left: Unified Showcase Image (Realistic Photo & Dashboard in one place) */}
+            {/* Left: Unified Showcase Image */}
             <div className="lg:col-span-7 order-2 lg:order-1">
-              <a
-                href="/images/showcase-dispatch-scheduling.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block relative overflow-hidden rounded-3xl border border-slate-200/90 shadow-xl group hover:shadow-2xl transition-all duration-300 bg-slate-100"
-                title="Click to view full image in new tab"
-              >
-                <img
+              <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 shadow-xl bg-slate-100">
+                <Image
                   src="/images/showcase-dispatch-scheduling.jpg"
-                  alt="Rental reservation dispatch schedule with aerial boom lifts and contractor order details"
-                  className="w-full h-auto object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
-                  width={1024}
-                  height={768}
+                  alt="Equipment rental management dispatch calendar and contractor order booking view"
+                  width={1000}
+                  height={750}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  quality={80}
+                  className="w-full h-auto object-cover object-center"
                 />
-                <div className="absolute top-4 right-4 bg-slate-900/80 hover:bg-slate-900 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-lg">
-                  <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                  <span>Open Image</span>
+                <div className="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                  <Calendar className="h-3.5 w-3.5 text-emerald-400" aria-hidden="true" />
+                  <span>24/7 Online Booking</span>
                 </div>
-              </a>
+              </div>
             </div>
 
             {/* Right copy */}
             <div className="lg:col-span-5 text-left space-y-6 order-1 lg:order-2">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                Let contractors book and sign contracts online 24 hours a day
+                Online Equipment Rental Booking &amp; Automated Contractor Agreements
               </h2>
               <p className="text-base leading-relaxed text-slate-600">
-                Give customers a branded online booking experience where they can select dates, upload documents, sign agreements, and pay deposits automatically.
+                Give customers a branded online booking portal where they can browse available equipment, select dates, upload licenses, sign digital rental agreements, and pay deposits automatically.
               </p>
 
               <div className="space-y-3 pt-2 text-sm text-slate-700">
@@ -502,17 +532,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Alternating Showcase 3: Fleet Maintenance & Protection (No eyebrow, Box-type button, Real Image) */}
+      {/* Alternating Showcase 3: Fleet Maintenance & Protection */}
       <section className="py-20 sm:py-24 bg-white border-t border-slate-200/80">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left copy */}
             <div className="lg:col-span-5 text-left space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                Keep Equipment Rental-Ready With Automated Maintenance Tracking
+                Fleet Maintenance Tracking &amp; Inspection Workflows for Equipment Rental
               </h2>
               <p className="text-base leading-relaxed text-slate-600">
-                Track engine hours, service intervals, inspections, parts, repairs, and maintenance downtime for every asset. Reduce unexpected breakdowns and keep your fleet on the job.
+                Track engine operating hours, service intervals, pre-rental inspections, parts, repairs, and maintenance downtime for every machine. Keep equipment rental-ready and avoid costly jobsite breakdowns.
               </p>
 
               <div className="space-y-3 pt-2 text-sm text-slate-700">
@@ -542,27 +572,24 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: Unified Showcase Image (Realistic Photo & Dashboard in one place) */}
+            {/* Right: Unified Showcase Image */}
             <div className="lg:col-span-7">
-              <a
-                href="/images/showcase-maintenance-inspections.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block relative overflow-hidden rounded-3xl border border-slate-200/90 shadow-xl group hover:shadow-2xl transition-all duration-300 bg-slate-100"
-                title="Click to view full image in new tab"
-              >
-                <img
+              <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 shadow-xl bg-slate-100">
+                <Image
                   src="/images/showcase-maintenance-inspections.jpg"
-                  alt="Maintenance work order checklist and inspection sign-off in heavy equipment repair facility"
-                  className="w-full h-auto object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
-                  width={1024}
-                  height={768}
+                  alt="Preventative fleet maintenance inspection checklist and repair order logging"
+                  width={1000}
+                  height={750}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  quality={80}
+                  className="w-full h-auto object-cover object-center"
                 />
-                <div className="absolute top-4 right-4 bg-slate-900/80 hover:bg-slate-900 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-lg">
-                  <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                  <span>Open Image</span>
+                <div className="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                  <Wrench className="h-3.5 w-3.5 text-amber-400" aria-hidden="true" />
+                  <span>Automated Service Logs</span>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>

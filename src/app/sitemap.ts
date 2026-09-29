@@ -2,62 +2,44 @@ import { MetadataRoute } from "next";
 import { siteConfig } from "@/data/siteData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const currentDate = new Date().toISOString();
+  const lastModDate = new Date("2026-09-29T12:00:00.000Z");
 
   const routes = [
     {
       url: siteConfig.baseUrl,
-      lastModified: currentDate,
-      changeFrequency: "weekly" as const,
-      priority: 1.0,
+      lastModified: lastModDate,
     },
     {
       url: `${siteConfig.baseUrl}/features`,
-      lastModified: currentDate,
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
+      lastModified: lastModDate,
     },
     {
       url: `${siteConfig.baseUrl}/pricing`,
-      lastModified: currentDate,
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
+      lastModified: lastModDate,
     },
     {
       url: `${siteConfig.baseUrl}/contact-us`,
-      lastModified: currentDate,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
+      lastModified: lastModDate,
     },
     {
       url: `${siteConfig.baseUrl}/about-us`,
-      lastModified: currentDate,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
+      lastModified: lastModDate,
     },
     {
       url: `${siteConfig.baseUrl}/login`,
-      lastModified: currentDate,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
+      lastModified: lastModDate,
     },
     {
       url: `${siteConfig.baseUrl}/signup`,
-      lastModified: currentDate,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
+      lastModified: lastModDate,
     },
     {
       url: `${siteConfig.baseUrl}/privacy-policy`,
-      lastModified: currentDate,
-      changeFrequency: "yearly" as const,
-      priority: 0.5,
+      lastModified: lastModDate,
     },
     {
       url: `${siteConfig.baseUrl}/terms-and-conditions`,
-      lastModified: currentDate,
-      changeFrequency: "yearly" as const,
-      priority: 0.5,
+      lastModified: lastModDate,
     },
   ];
 

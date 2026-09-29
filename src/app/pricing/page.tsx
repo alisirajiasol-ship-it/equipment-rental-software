@@ -8,9 +8,33 @@ import { ShieldCheck, HelpCircle, CheckCircle2, ArrowRight } from "lucide-react"
 export const metadata: Metadata = {
   title: "Pricing Plans & Comparison Matrix",
   description:
-    "Explore transparent pricing plans for EquipmentRentalSoftware.io: Starter ($39/mo), Professional ($79/mo), and Business ($149/mo). Compare full feature capabilities.",
+    "Simple, transparent pricing for any rental fleet. Plans from $39/mo with inventory tracking, online bookings, and maintenance logs. Try free for 14 days.",
   alternates: {
     canonical: "/pricing",
+  },
+  openGraph: {
+    title: "Pricing Plans & Comparison Matrix | Equipment Rental Software",
+    description:
+      "Simple, transparent pricing for any rental fleet. Plans from $39/mo with inventory tracking, online bookings, and maintenance logs. Try free for 14 days.",
+    url: `${siteConfig.baseUrl}/pricing`,
+    siteName: siteConfig.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${siteConfig.baseUrl}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Pricing Plans - Equipment Rental Software",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing Plans & Comparison Matrix | Equipment Rental Software",
+    description:
+      "Simple, transparent pricing for any rental fleet. Plans from $39/mo with inventory tracking, online bookings, and maintenance logs. Try free for 14 days.",
+    images: [`${siteConfig.baseUrl}/opengraph-image`],
   },
 };
 

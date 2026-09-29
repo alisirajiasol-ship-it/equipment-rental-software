@@ -19,14 +19,16 @@ export interface FeatureMatrixItem {
   business: string | boolean;
 }
 
+const rawBaseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://equipment-rental-software.vercel.app";
+
 export const siteConfig = {
   name: "Equipment Rental Software",
-  shortName: "EquipmentRentalSoftware.io",
-  domain: "equipmentRentalSoftware.io",
-  baseUrl: "https://equipmentrentalsoftware.io",
+  shortName: "Equipment Rental Software",
+  domain: rawBaseUrl.replace(/^https?:\/\//, ""),
+  baseUrl: rawBaseUrl,
   slogan: "Rent Smarter. Manage Everything.",
   description:
-    "EquipmentRentalSoftware.io gives equipment rental businesses one powerful platform to manage their entire rental operation. From inventory and equipment availability to online bookings, customers, payments, and maintenance, everything stays organized in one place. Automate repetitive tasks, simplify day-to-day operations, and deliver a smoother rental experience for your customers. Built to help equipment rental companies save time, stay organized, and scale their business.",
+    "All-in-one equipment rental software to track inventory, automate online bookings, dispatch fleets, and manage maintenance. Start your free trial today.",
   contact: {
     email: "hello@equipmentrentalsoftware.io",
     phone: "(708) 562-1403",
@@ -44,7 +46,6 @@ export const siteConfig = {
   social: {
     twitter: "https://twitter.com/equipmentrental",
     linkedin: "https://linkedin.com/company/equipmentrentalsoftware",
-    facebook: "https://facebook.com/equipmentrentalsoftware",
   },
   navLinks: [
     { name: "Home", href: "/" },

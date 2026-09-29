@@ -17,9 +17,33 @@ import {
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn the mission behind EquipmentRentalSoftware.io: empowering commercial equipment rental businesses to automate operations, track inventory, and scale sustainably.",
+    "Learn how Equipment Rental Software empowers rental companies to automate bookings, track fleets, streamline maintenance, and grow revenue.",
   alternates: {
     canonical: "/about-us",
+  },
+  openGraph: {
+    title: "About Us | Equipment Rental Software",
+    description:
+      "Learn how Equipment Rental Software empowers rental companies to automate bookings, track fleets, streamline maintenance, and grow revenue.",
+    url: `${siteConfig.baseUrl}/about-us`,
+    siteName: siteConfig.name,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${siteConfig.baseUrl}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "About Us - Equipment Rental Software",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Equipment Rental Software",
+    description:
+      "Learn how Equipment Rental Software empowers rental companies to automate bookings, track fleets, streamline maintenance, and grow revenue.",
+    images: [`${siteConfig.baseUrl}/opengraph-image`],
   },
 };
 
