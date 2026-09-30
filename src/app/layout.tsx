@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/data/siteData";
+import { SITE_URL, ALLOW_INDEXING } from "@/lib/site";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -13,26 +14,17 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.baseUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: `${siteConfig.name} | ${siteConfig.slogan}`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: [
-    "equipment rental software",
-    "rental management system",
-    "heavy machinery tracking",
-    "tool rental software",
-    "equipment booking software",
-    "fleet maintenance system",
-    "equipment inventory software",
-  ],
-  authors: [{ name: siteConfig.name, url: siteConfig.baseUrl }],
+  authors: [{ name: siteConfig.name, url: SITE_URL }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
   alternates: {
-    canonical: siteConfig.baseUrl,
+    canonical: SITE_URL,
   },
   icons: {
     icon: [
@@ -49,13 +41,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${siteConfig.name} | ${siteConfig.slogan}`,
     description: siteConfig.description,
-    url: siteConfig.baseUrl,
+    url: SITE_URL,
     siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: `${siteConfig.baseUrl}/opengraph-image`,
+        url: `${SITE_URL}/opengraph-image`,
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} - Equipment Rental Software Platform`,
@@ -66,19 +58,21 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.slogan}`,
     description: siteConfig.description,
-    images: [`${siteConfig.baseUrl}/opengraph-image`],
+    images: [`${SITE_URL}/opengraph-image`],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  robots: ALLOW_INDEXING
+    ? {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      }
+    : { index: false, follow: false },
 };
 
 export default function RootLayout({
@@ -86,54 +80,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const organizationJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: siteConfig.name,
-    alternateName: siteConfig.shortName,
-    url: siteConfig.baseUrl,
-    logo: `${siteConfig.baseUrl}/images/logo.png`,
-    description: siteConfig.description,
-    telephone: siteConfig.contact.phone,
-    email: siteConfig.contact.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: siteConfig.contact.street,
-      addressLocality: siteConfig.contact.city,
-      addressRegion: siteConfig.contact.stateCode,
-      postalCode: siteConfig.contact.zip,
-      addressCountry: siteConfig.contact.countryCode,
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: siteConfig.contact.latitude,
-      longitude: siteConfig.contact.longitude,
-    },
-    sameAs: [
-      siteConfig.social.twitter,
-      siteConfig.social.linkedin,
-    ],
-  };
-
-  const webSiteJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: siteConfig.name,
-    url: siteConfig.baseUrl,
-  };
-
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${plusJakartaSans.variable} h-full scroll-smooth`}>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
-        />
-      </head>
       <body className="min-h-full flex flex-col font-sans bg-white text-slate-900 antialiased selection:bg-slate-900 selection:text-white">
         <Navbar />
         <main className="flex-1">{children}</main>

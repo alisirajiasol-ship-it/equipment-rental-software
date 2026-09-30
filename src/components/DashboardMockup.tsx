@@ -252,12 +252,11 @@ export default function DashboardMockup() {
             </div>
           </div>
 
-          <button
-            type="button"
-            className="w-full rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2.5 transition-colors shadow-xs"
+          <div
+            className="w-full rounded-xl bg-blue-600 text-white text-xs font-semibold py-2.5 text-center shadow-xs select-none"
           >
             View Reservation Details
-          </button>
+          </div>
         </div>
       </div>
     </div>

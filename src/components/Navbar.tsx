@@ -43,8 +43,6 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-4">
             <span>Corporate Fleet HQ: {siteConfig.contact.city}, {siteConfig.contact.stateCode}</span>
-            <span className="text-slate-300">|</span>
-            <span className="text-emerald-700 font-semibold">Live System Status: Normal</span>
           </div>
         </div>
       </div>
@@ -58,7 +56,7 @@ export default function Navbar() {
         >
           <Image
             src="/images/logo.png"
-            alt="EquipmentRentalSoftware.io"
+            alt="Equipment Rental Software"
             width={250}
             height={67}
             priority

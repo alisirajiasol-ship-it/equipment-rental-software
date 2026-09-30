@@ -18,7 +18,7 @@ export default function Footer() {
             >
               <Image
                 src="/images/logo.png"
-                alt="EquipmentRentalSoftware.io"
+                alt="Equipment Rental Software"
                 width={240}
                 height={64}
                 className="h-12 md:h-14 w-auto object-contain"
@@ -26,7 +26,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm leading-relaxed text-slate-600 max-w-sm">
-              A complete equipment rental management platform to track inventory, manage bookings, handle maintenance, and grow your business.
+              Equipment rental software for tracking inventory, managing bookings, handling payments, and staying on top of maintenance.
             </p>
 
             {/* Social Media Circular Buttons */}
@@ -164,7 +164,7 @@ export default function Footer() {
         {/* Bottom Copyright & Legal Row with Vertical Separators */}
         <div className="mt-12 pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>
-            &copy; {new Date().getFullYear()} {siteConfig.domain}. All rights reserved.
+            &copy; 2026 Equipment Rental Software. All rights reserved.
           </p>
           <div className="flex items-center gap-3 sm:gap-4 text-slate-500">
             <span className="text-slate-300">|</span>

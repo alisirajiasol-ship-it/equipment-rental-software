@@ -43,3 +43,4 @@ next-env.d.ts
 # audit and temp files
 audit_*
 parse_audit_doc.js
+homepage_seo_doc*
